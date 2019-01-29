@@ -1,8 +1,8 @@
 class Restaurant < ApplicationRecord
 
-  has_many :restaurant_shifts
-  has_many :tables
-  has_many :reservations
+  has_many :restaurant_shifts, dependent: :destroy
+  has_many :tables, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
 
   validates :name, :email, :phone, presence: true
