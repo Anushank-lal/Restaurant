@@ -2,8 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :restaurant
   belongs_to :restaurant_shift
   belongs_to :user
-
-  has_one :table
+  belongs_to :table
 
   validate :reservation_time_with_shift
 
