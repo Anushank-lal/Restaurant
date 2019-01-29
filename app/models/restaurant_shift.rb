@@ -2,6 +2,7 @@ class RestaurantShift < ApplicationRecord
 
   belongs_to :restaurant
 
+  validates :start_time, :end_time, presence: true
   validate :shift_timings
 
  private

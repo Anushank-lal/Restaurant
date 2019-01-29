@@ -10,5 +10,3 @@ class Restaurant < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
 end
-
-#R -> RST -> Tables -> Reservation
