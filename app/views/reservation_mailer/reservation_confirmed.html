@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.name %></h1>
+    <p>
+      Your reservation is Confirmed.
+      Restaurant: @reservation.restaurant.name
+      Reservation Time: @reservation.reservation_time
+      Table: @reservation.table.table_name
+      No. of Guests: @reservation.guest_count
+    </p>
+  </body>
+</html>

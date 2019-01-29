@@ -10,6 +10,8 @@ class Reservation < ApplicationRecord
   validate :reservation_time_with_shift
   validate :check_table_capacity
 
+  after_create :send_email
+
   attr_accessor :table_name, :reservation_shift, :guest_email
 
   def guest_name
@@ -43,5 +45,10 @@ class Reservation < ApplicationRecord
   def check_table_capacity
     range = self.table.min_guests..self.table.max_guests
     errors.add(:guest_count, "must be between maximum and minimum capacity of the table.") unless range === self.guest_count
+  end
+
+  def send_email
+    ReservationMailer.reservation_confirmed(self.guest, self)
+    ReservationMailer.table_reserved(self)
   end
 end
