@@ -1,3 +1,3 @@
 class ReservationSerializer < ActiveModel::Serializer
-  attributes :reservation_time, :guest_count
+  attributes :id, :reservation_time, :guest_count, :guest_name, :table_name
 end

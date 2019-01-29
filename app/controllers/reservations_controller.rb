@@ -9,20 +9,21 @@ class ReservationsController < ApplicationController
 
   # POST /reservations
   def create
-    @reservation = Reservation.create!(reservation_params)
-    json_response(@reservation, :created)
+    @reservation = Reservation.new(reservation_params)
+    @reservation.create_reservations(reservation_params)
+    render json: @reservation, status: :created
   end
 
   # PUT /reservations/:id
   def update
-    @reservation.update(reservation_params)
-    head :no_content
+    @reservation.create_reservations(reservation_params)
+    render json: @reservation, status: :ok
   end
 
   private
 
   def reservation_params
-    params.permit(:reservation_time)
+    params.permit(:reservation_time, :guest_count, :table_name, :reservation_shift, :guest_email)
   end
 
   def set_reservation
