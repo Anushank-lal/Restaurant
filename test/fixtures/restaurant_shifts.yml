@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2019-01-29 00:45:52
+  end_time: 2019-01-29 00:45:52
+  shift_type: MyString
+
+two:
+  start_time: 2019-01-29 00:45:52
+  end_time: 2019-01-29 00:45:52
+  shift_type: MyString
