@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_01_28_193805) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
-    t.time "reservation_time"
+    t.datetime "reservation_time"
     t.integer "user_id"
     t.integer "guest_count"
     t.bigint "restaurant_id"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2019_01_28_193805) do
   end
 
   create_table "restaurant_shifts", force: :cascade do |t|
-    t.time "start_time"
-    t.time "end_time"
+    t.string "start_time"
+    t.string "end_time"
     t.string "shift_type"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false

@@ -9,7 +9,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # POST /v1/reservations
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new
     @reservation.create_reservations(reservation_params)
     render json: @reservation, status: :created
   end

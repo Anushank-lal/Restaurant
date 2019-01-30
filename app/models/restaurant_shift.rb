@@ -11,7 +11,7 @@ class RestaurantShift < ApplicationRecord
   def shift_timings
     return if start_time.blank? || end_time.blank?
 
-    if self.end_time < self.start_time
+    if self.end_time.to_time < self.start_time.to_time
       raise "Shift end time can’t be less than the start time"
     end
   end
