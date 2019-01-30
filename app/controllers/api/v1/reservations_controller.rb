@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :update, :destroy]
 
   # GET /reservations
@@ -7,14 +7,14 @@ class ReservationsController < ApplicationController
     render json: @reservations
   end
 
-  # POST /reservations
+  # POST /v1/reservations
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.create_reservations(reservation_params)
     render json: @reservation, status: :created
   end
 
-  # PUT /reservations/:id
+  # PUT /v1/reservations/:id
   def update
     @reservation.create_reservations(reservation_params)
     render json: @reservation, status: :ok

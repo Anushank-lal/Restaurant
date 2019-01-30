@@ -29,7 +29,7 @@ class Reservation < ApplicationRecord
 
     self.table_id = table.id
     self.user_id = guest.id
-    self.reservation_time = "2000-01-01 14:06:28"#reservation_params[:reservation_time]
+    self.reservation_time = Time.now#reservation_params[:reservation_time]
     self.restaurant_id = table.restaurant_id
     self.restaurant_shift_id = shift.id
     self.save!
